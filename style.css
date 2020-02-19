@@ -1,3 +1,7 @@
+/* ++++++++++++++++++++++++++++++ */
+        /* Page Resets Start */
+/* ++++++++++++++++++++++++++++++ */
+
 article,
 aside,
 details,
@@ -187,6 +191,10 @@ input::-moz-focus-inner {
   clear: both;
 }
 
+/* ++++++++++++++++++++++++++++++ */
+        /* Page Resets End */
+/* ++++++++++++++++++++++++++++++ */
+
 body {
   color: #555;
   font-family: Open Sans;
@@ -200,18 +208,19 @@ body {
 .right {
   float: right;
 }
+
 .red {
-  color: #ff5049 !important;
+  color: #ff5049;
 }
 .red-focus:focus {
-  border: 1px solid #ff5049 !important;
+  border: 1px solid #ff5049;
 }
 
 /* Top Part */
 .top {
   height: 40vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url(back.png);
+    url(back.webp);
   background-size: cover;
   background-position: center;
   position: relative;
