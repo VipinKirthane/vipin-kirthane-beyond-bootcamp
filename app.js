@@ -166,44 +166,41 @@ const controller = ((UIcontroller, budgetcontroller) => {
   UIcontroller.updateMonth();
 
   const updateBudget = function() {
-    // 1 calculate the budget
-
-    // Take budget from dataStorage
+    //Calculating the budget
     budgetcontroller.calculateBudget();
 
-    // 2 Return the budget
+    // Returning the budget
     let budget = budgetcontroller.getBudget();
 
-    // 3 Display the budget UI
+    //Displaying the budget UI
     UIcontroller.addHeader(budget);
   };
 
   const addButton = () => {
     var input, newItem;
-    //1. Get Data
+    //Getting input
     var input = UIcontroller.getInput();
 
     if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
-      // 2. add the item to the budget controller
+      //Adding the item to the budget controller
       newItem = budgetcontroller.addItem(
         input.type,
         input.description,
         input.value
       );
 
-      // 3. add this to UI
+      //Adding to the UI
       UIcontroller.addListItem(newItem, input.type);
 
-      // 4. Clear Field and set cursor to the input form, after submit
+      //Clear the field and set cursor to the input form, after submitting
       UIcontroller.clearField();
       updateBudget();
     } else {
-      alert("You must put data in your input");
+      alert("Please add data in the input");
     }
   };
 
   const DeleteItem = function(event) {
-    // Take number and type from side
     let ItemID, splitID, type, ID;
 
     ItemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
@@ -211,10 +208,10 @@ const controller = ((UIcontroller, budgetcontroller) => {
     type = splitID[0];
     ID = parseInt(splitID[1]);
 
-    // Delete from budget
+    //Delete from the budget
     budgetcontroller.deleteItem(type, ID);
 
-    // Delete from UI
+    //Delete from the UI
     UIcontroller.deleteList(ItemID);
     updateBudget();
   };
